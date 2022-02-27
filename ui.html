@@ -1,0 +1,32 @@
+<html>
+  <head>
+    <link
+      rel="stylesheet"
+      href="node_modules/figma-plugin-ds/dist/figma-plugin-ds.css"
+    />
+  </head>
+  <body>
+    <h2>Shape Creator</h2>
+    <p>Count: <input id="count" type="number" value="5" /></p>
+    <button id="create">Crwweate</button>
+    <button id="cancel">Cancel</button>
+    <button class="button button--primary">Label</button>
+    <button class="button button--primary-destructive">Label</button>
+    <button class="button button--primary" disabled>Label</button>
+  </body>
+
+  <script>
+    document.getElementById("create").onclick = () => {
+      const textbox = document.getElementById("count");
+      const count = parseInt(textbox.value, 10);
+      parent.postMessage(
+        { pluginMessage: { type: "create-shapes", count } },
+        "*"
+      );
+    };
+
+    document.getElementById("cancel").onclick = () => {
+      parent.postMessage({ pluginMessage: { type: "cancel" } }, "*");
+    };
+  </script>
+</html>

@@ -1,0 +1,8 @@
+{
+  "name": "test-2",
+  "id": "1079621558428234768",
+  "api": "1.0.0",
+  "main": "code.js",
+  "editorType": ["figma", "figjam"],
+  "ui": "ui.html"
+}
